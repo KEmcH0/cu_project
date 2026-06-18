@@ -6,16 +6,16 @@ export const committeeMembers = [
 ];
 
 export const advisors = [
-  { id: 1, name: "Tamizur Rahman", designation: "Advisor", photo: "/advisors/images/tamizur.jpeg", bio: "Assistant Teacher, Tetaigoan Rashid Uddin High School."},
-  { id: 2, name: "Dr. Tarana Jebin", designation: "Advisor", photo: "/advisors/images/tarana.jpeg", bio: "Dental Surgeon, 32 BCS" },
-  { id: 3, name: "Sohel Reza", designation: "Advisor", photo: "/advisors/images/sohel.jpeg", bio: "Assistant Teacher, Tetaigoan Rashid Uddin High School." },
-  { id: 4, name: "Jayed Hasan", designation: "Advisor", photo: "/advisors/images/zayed.jpeg", bio: "Assistant Superintendent of Police, 38 BCS" },
-  { id: 5, name: "Kamal Uddin", designation: "Advisor", photo: "/advisors/images/kamal.jpeg", bio: "Senior Teacher, Tetaigoan Rashid Uddin High School."},
-  { id: 6, name: "Md. Sofiul Islam", designation: "Advisor", photo: "/advisors/images/sofiul.jpeg", bio: "Honors 4th year, Mathematics"},
-  { id: 7, name: "Rasel Ahmed", designation: "Advisor", photo: "/advisors/images/rasel.jpeg"},
-  { id: 8, name: "Dr.  Nazrul Islam", designation: "Advisor", photo: "/advisors/images/nazrul.jpeg", bio: "Consultant(Medicine), MAG OSMANI MEDICAL COLLEGE HOSPITAL, SYLHET", achievements: "Tech Leader of the Year 2018" },
   { id: 9, name: "Md. Shahab Uddin", designation: "Advisor", photo: "/advisors/images/shahabuddin.jpeg", bio: "Senior Teacher, Ali Amzad Goverment Girls High School." },
+  { id: 5, name: "Kamal Uddin", designation: "Advisor", photo: "/advisors/images/kamal.jpeg", bio: "Senior Teacher, Tetaigoan Rashid Uddin High School."},
+  { id: 2, name: "Dr. Tarana Jebin", designation: "Advisor", photo: "/advisors/images/tarana.jpeg", bio: "Dental Surgeon, 32 BCS" },
+  { id: 8, name: "Dr.  Nazrul Islam", designation: "Advisor", photo: "/advisors/images/nazrul.jpeg", bio: "Consultant(Medicine), MAG OSMANI MEDICAL COLLEGE HOSPITAL, SYLHET", achievements: "Tech Leader of the Year 2018" },
+  { id: 7, name: "Rasel Ahmed", designation: "Advisor", photo: "/advisors/images/rasel.jpeg"},
   { id: 10, name: "Dr. Husne Ara Begum Sopna", designation: "Advisor", photo: "/advisors/images/sopna.jpeg", bio: "Register, 34 BCS"},
+  { id: 4, name: "Jayed Hasan", designation: "Advisor", photo: "/advisors/images/zayed.jpeg", bio: "Assistant Superintendent of Police, 38 BCS" },
+  { id: 1, name: "Tamizur Rahman", designation: "Advisor", photo: "/advisors/images/tamizur.jpeg", bio: "Assistant Teacher, Tetaigoan Rashid Uddin High School."},
+  { id: 3, name: "Sohel Reza", designation: "Advisor", photo: "/advisors/images/sohel.jpeg", bio: "Assistant Teacher, Tetaigoan Rashid Uddin High School." },
+  { id: 6, name: "Md. Sofiul Islam", designation: "Advisor", photo: "/advisors/images/sofiul.jpeg", bio: "Honors 4th year, Mathematics"},
   { id: 11, name: "Tajul Islam", designation: "Advisor", photo: "/advisors/images/tajul.jpg", bio: "Master 1st year, Shahjalal University of Science and Technology, Sylhet"},
   
 ];

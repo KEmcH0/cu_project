@@ -1,23 +1,32 @@
 import fs from "fs";
 import path from "path";
 
-import GalleryClient from "./GalleryClient";
+import { Gallery } from "@/components/Gallery";
+import type { GalleryImage } from "@/lib/galleryData";
+
+export const metadata = {
+  title: "Gallery | BMMSWC",
+  description: "Explore our collection of community events and activities",
+};
 
 export default function GalleryPage() {
   const galleryDir = path.join(process.cwd(), "public", "gallery");
 
-  const imageFiles = fs.existsSync(galleryDir)
+  const galleryImages: GalleryImage[] = fs.existsSync(galleryDir)
     ? fs
         .readdirSync(galleryDir)
         .filter((fileName) => /\.(jpe?g|png|webp|gif|avif)$/i.test(fileName))
-        .sort((a, b) => a.localeCompare(b))
+        .map((fileName, index) => ({
+          id: index + 1,
+          url: `/gallery/${fileName}`,
+          alt: `BMMSWC gallery image ${index + 1}`,
+          title: `Gallery Image ${index + 1}`,
+          description: "Community photo from BMMSWC",
+          category: "Events",
+          aspectRatio: index % 3 === 0 ? "landscape" : index % 2 === 0 ? "portrait" : "square",
+          featured: index === 0,
+        }))
     : [];
 
-  const images = imageFiles.map((fileName, index) => ({
-    id: index + 1,
-    url: `/gallery/${fileName}`,
-    alt: `BMMSWC gallery photo ${index + 1}`,
-  }));
-
-  return <GalleryClient images={images} />;
+  return <Gallery images={galleryImages} />;
 }

@@ -22,7 +22,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center" />
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center text-center">
           <div className="inline-block p-4 bg-white/10 rounded-full mb-6 backdrop-blur-sm">
-            <span className="text-secondary font-bold tracking-wider">EST. 2000</span>
+            <span className="text-secondary font-bold tracking-wider">EST. 1985</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl leading-tight">
             Bangladesh Manipuri Muslim <br className="hidden md:block" />
@@ -37,12 +37,6 @@ export default function Home() {
               className="px-8 py-3 bg-secondary text-primary-foreground font-semibold rounded-full hover:bg-secondary/90 transition-all flex items-center justify-center gap-2"
             >
               Learn More <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all text-center"
-            >
-              Join Us
             </Link>
           </div>
         </div>

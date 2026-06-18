@@ -31,11 +31,6 @@ export default function Footer() {
                   News & Events
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="text-white/80 hover:text-secondary transition-colors">
-                  Contact Us
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -66,6 +61,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
           <p>&copy; {new Date().getFullYear()} BMMSWC. All rights reserved.</p>
+          <p>Developed By Fahmid Hasan</p>
         </div>
       </div>
     </footer>

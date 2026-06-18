@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Menu, X, Moon, Sun } from "lucide-react";
 
@@ -17,73 +18,105 @@ export default function Navbar() {
     { name: "Alumni", href: "/alumni" },
     { name: "News & Events", href: "/news" },
     { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="font-bold text-xl text-primary">BMMSWC</span>
-        </Link>
+    <>
+      <style>{`
+        @keyframes gradientCycle {
+          0%, 100% {
+            color: #059669;
+            text-shadow: 0 0 10px rgba(5, 150, 105, 0.6), 0 0 20px rgba(5, 150, 105, 0.3);
+          }
+          25% {
+            color: #10b981;
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.6), 0 0 25px rgba(16, 185, 129, 0.3);
+          }
+          50% {
+            color: #fbbf24;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.8), 0 0 30px rgba(251, 191, 36, 0.5);
+          }
+          75% {
+            color: #10b981;
+            text-shadow: 0 0 15px rgba(16, 185, 129, 0.6), 0 0 25px rgba(16, 185, 129, 0.3);
+          }
+        }
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-md hover:bg-secondary/10 text-secondary"
-          >
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute top-[20px] h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </button>
-        </div>
+        .gradient-cycle {
+          animation: gradientCycle 4s ease-in-out infinite;
+        }
+      `}</style>
+      <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="BMMSWC Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <span className="font-bold text-2xl gradient-cycle">BMMSWC</span>
+          </Link>
 
-        {/* Mobile Nav Toggle */}
-        <div className="lg:hidden flex items-center">
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 mr-2 rounded-md hover:bg-secondary/10 text-secondary"
-          >
-            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute top-[20px] h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </button>
-          <button
-            className="p-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Nav Menu */}
-      {isOpen && (
-        <div className="lg:hidden border-t bg-background">
-          <div className="flex flex-col space-y-3 px-4 py-6">
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium transition-colors hover:text-primary"
-                onClick={() => setIsOpen(false)}
+                className="text-sm font-medium transition-colors hover:text-primary"
               >
                 {link.name}
               </Link>
             ))}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 rounded-md hover:bg-secondary/10 text-secondary"
+            >
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute top-[20px] h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </button>
+          </div>
+
+          {/* Mobile Nav Toggle */}
+          <div className="lg:hidden flex items-center">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 mr-2 rounded-md hover:bg-secondary/10 text-secondary"
+            >
+              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute top-[20px] h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </button>
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Nav Menu */}
+        {isOpen && (
+          <div className="lg:hidden border-t bg-background">
+            <div className="flex flex-col space-y-3 px-4 py-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-base font-medium transition-colors hover:text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   );
 }
